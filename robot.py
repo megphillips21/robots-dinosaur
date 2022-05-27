@@ -1,13 +1,13 @@
 
 class Robot:
 
-    def __init__(self):
+    def __init__(self, name):
         self.name = ''
-        self.health = ''
+        self.health = int
         self.active_weapon = self.Weapon()
 
     def attack(self, dinosaur):
         pass
 
-    
+
 

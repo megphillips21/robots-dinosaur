@@ -1,7 +1,7 @@
 
 
 
-class Robot:
+class Battlefield:
    
    def __init__(self): 
     self.robot = self.robot()
