@@ -5,7 +5,7 @@ class Battlefield:
    
     def __init__(self): 
         self.robot = Robot('Beep-Boop')
-        self.dinosaur = Dinosaur('Toothy',20)
+        self.dinosaur = Dinosaur('Toothy',18)
 
     def run_game(self):
         self.display_welcome()
@@ -19,7 +19,7 @@ class Battlefield:
     
     def display_winner(self):
         if self.robot.health > 0:
-            print(f"{self.robot.name} is the winner! {self.dinosaur} has been defeated by the robot's {self.robot.active_weapon}")
+            print(f"{self.robot.name} is the winner! {self.dinosaur.name} has been defeated by the robot's {self.robot.active_weapon.name}!")
         elif self.dinosaur.health > 0:
             print(f'{self.dinosaur.name} is the winner! {self.robot.name} has been defeated! RIP {self.robot.name}')
         pass
@@ -28,19 +28,19 @@ class Battlefield:
         still_alive = True
         while (still_alive == True):
             self.robot.attack(self.dinosaur)
-            self.dinosaur.attack(self.robot)
+            
             if self.robot.health > 0:
                 still_alive == True
             if self.dinosaur.health > 0:
                 still_alive == True
-            if self.robot.health <= 0 or self.dinosaur.health <=0:
-                still_alive == False
             if self.robot.health <=0:
                 print(f'{self.dinosaur.name} has defeated {self.robot.name}')
             elif self.dinosaur.health <=0:
                 print(f'{self.robot.name} has defeated {self.dinosaur.name}')
-            # if still_alive == False:
-            #     self.display_winner()
+            if self.robot.health <= 0 or self.dinosaur.health <=0:
+                still_alive = not still_alive
+                break
+            self.dinosaur.attack(self.robot)
             pass
 
         
