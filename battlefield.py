@@ -4,8 +4,8 @@
 class Battlefield:
    
    def __init__(self): 
-    self.robot = self.robot()
-    self.dinosaur = self.dinosaur()
+    self.robot = Robot(name)
+    self.dinosaur = self.Dinosaur(name)
 
     def run_game(self):
         pass
